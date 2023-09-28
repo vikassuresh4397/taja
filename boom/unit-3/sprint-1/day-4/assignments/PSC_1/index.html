@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  
+  <body>
+    <div id="links">
+      <div><a href="index.html">Home</a></div>
+      <div><a href="applied.html">Applied Jobs</a></div>
+      <div><a href="bookmark.html">Bookmarks</a></div>
+    </div>
+    <form action="" id="form">
+      <h2>Enter STUDENT Details</h2>
+      <input placeholder="Enter Name" id="name" name="name" type="text" />
+      <input placeholder="Enter course" type="text" name="course" id="course" />
+      <input placeholder="Enter unit" type="number" name="unit" id="unit" />
+      <input placeholder="Enter image url" type="text" name="image" id="image" />
+      <input placeholder="Enter batch" type="number" name="batch" id="batch" />
+     
+     
+      <input id="form" type="submit" name="submit" value="Submit" />
+    </form>
+  </body>
+  <script>
+   document.querySelector("#form").addEventListener("submit",details);
+   let arr= JSON.parse(localStorage.getItem("studentdetails")) || [];
+   function details(a,b,c,d,e){
+   event.preventDefault();
+     this.tname= a;
+     this.tcourse= b;
+     this.tunit= c;
+     this.timg= d;
+     this.tbatch= e;
+     
+    //  let obj={tname,tcourse,tunit,timg,tbatch};
+    
+     arr.push(obj);
+     localStorage.setItem("studentdetails",JSON.stringify(arr))
+   }
+
+   let x= new details(document.querySelector("#name").value,
+   document.querySelector("#course").value,
+   document.querySelector("#unit").value,
+   document.querySelector("#image").value,
+   document.querySelector("#batch").value,
+   )
+
+   
+  </script>
+</html>

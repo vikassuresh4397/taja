@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Sign up Page</h1>
+  <p>name</p>
+  <input type="text" placeholder="name" id="name">
+  <p>email</p>
+  <input type="text" placeholder="email" id="email">
+  <p>password</p>
+  <input type="text" placeholder="password" id="password">
+ <h1></h1> <button id="boom">Submit</button>
+</body>
+</html>
+
+<script>
+document.querySelector("#boom").addEventListener("click",myfun);
+let arr= JSON.parse(localStorage.getItem("details")) || [];
+function myfun(e){
+    e.preventDefault();
+
+    let tname=document.querySelector("#name").value;
+    let temail=document.querySelector("#email").value;
+    let tpassword=document.querySelector("#password").value;
+    let signup=false;
+    if(temail==""|| tname==""||tpassword==""){
+        alert("jot down the details");
+        return;
+    }else{
+        arr.forEach(function(el){
+       if(temail==el.temail){
+        signup=true;
+       }
+    })
+    }
+
+    if(signup){
+        alert("Already Signed Up Successfully");
+        return;
+    }
+    
+    
+    let obj={tname,temail,tpassword};
+    arr.push(obj);
+    localStorage.setItem("details",JSON.stringify(arr));
+}
+
+
+</script>

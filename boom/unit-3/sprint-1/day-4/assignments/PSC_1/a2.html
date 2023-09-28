@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <input oninput="searchMovies()" type="text" id="movie_name">
+    <button  >Search movies</button>
+    <div id="loaders"></div>
+    <div id="movies"></div>
+  </div>
+</body>
+</html>
+
+<script>
+  async function searchMovies(){
+   let movie_name=document.getElementById("movie_name").value;
+   console.log(movie_name);
+
+
+ try{
+  // MDb API: http://www.omdbapi.com/?i=tt3896198&apikey=4ce57ca0
+  // https://www.omdbapi.com/?s=${searchquery}&page=1&apikey=2808274d
+  //  let response=await fetch(`https://www.omdbapi.com/?s=${movie_name}&page=1&apikey=2808274d`);
+  let response=await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=4ce57ca0&s=${movie_name}&page=17`);
+  console.log("respone",response);
+  let data= await response.json();
+  console.log(data);
+  let act_data=data.Search;
+  // console.log(act_data)
+  //  actual_Data = await response.json();
+  //  console.log("response",actual_Data);
+  //  let data= await response.json;
+  //  console.log("data",data)
+  //  let actual_data=data.Search;
+  //  console.log("err",actual_data);
+   
+   }
+   catch(err){
+    console.log(err)
+   }
+   
+
+
+
+    // let response=fetch(`http://www.omdbapi.com/?apikey=f3d5c71f&s=${movie_name}`);
+    // // console.log(response);
+
+    // response.then(function (sucess){
+    //  let data = sucess.json();
+
+    //  data.then(function(sucess){
+
+    //  })
+
+    // })
+
+  }
+</script>

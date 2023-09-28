@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="wow" id="rating" onchange="woo()">
+       <h1><option value="select rating order">Select rating order</option></h1> 
+        <option value="ASC">ASC</option>
+        <option value="DSC">DSC</option>
+    </select>
+    <div id="parent"></div>
+
+</body>
+</html>
+<style>
+    #parent{
+      
+        display: grid;
+        
+        gap:4px;
+        padding: 10px;
+    }
+    img{
+        width:100%
+    }
+
+    div>div{
+        border: 1px solid black;
+        text-align: center;
+    }
+
+
+</style>
+
+<script>
+
+let moviedetail=[{
+    name:"Brahmastra",
+    image:"https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/5041/1405041-v-3f9a1366bf49",
+     imBd:15,
+     dob: 2022,
+},
+{
+    name:"Liger",
+    image:"https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/5595/1355595-v-93a3866a2fa5",
+    imBd:5,
+     dob: 2023,
+},
+{
+    name:"Prey",
+    image:"https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/5356/1355356-v-85602bb4a2c9",
+     imBd:6,
+     dob: 2021,
+},
+{
+    name:"Phaltu",
+    image:"https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/4703/1384703-v-c13b2ed799eb",
+     imBd:7,
+     dob: 2020,
+},
+{
+    name:"Super30",
+    image:"https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/9231/1389231-v-6191b0d9af4f",
+     imBd:8,
+     dob: 2025,
+},
+{
+    name: "MS dhoni",
+    image:"https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/9226/1389226-v-8f96db1fe315",
+     imBd:9,
+     dob: 2026,
+},
+{
+    name:"13B",
+    image:"https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/old_images/vertical/MOVIE/4941/1000214941/1000214941-v",
+     imBd:10,
+     dob: 2027,
+},
+{
+    name:"Shiv",
+    image:"https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/2876/862876-v",
+     imBd:11,
+     dob: 2028,
+},
+{
+    name:"Black Panther",
+    image:"https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/5180/875180-v",
+     imBd:12,
+     dob: 2029,
+},];
+let count=0,rount=0;
+function woo(){
+   let y=document.querySelector("select").value;
+   document.querySelector("#parent").innerText="";
+   if(y=="ASC"){
+    moviedetail.sort(function(a,b){
+        return a.imBd-b.imBd;
+    });
+    console.log(moviedetail);
+    count++;
+    moviedetail.forEach(function(el){
+    var tdiv= document.createElement("div");
+    var tname=document.createElement("h1");
+    tname.innerText=el.name;
+    var timage= document.createElement("img");
+    timage.src=el.image;
+    var timBd= document.createElement("h2");
+    timBd.innerText="imBd Rating : "+ el.imBd;
+    var tdob= document.createElement("p");
+    tdob.innerText=el.dob;
+    tdiv.append(tname,timage,timBd,tdob);
+    document.querySelector("#parent").append(tdiv);
+})
+
+   }else if(y=="DSC"){
+    moviedetail.sort(function(a,b){
+        return b.imBd-a.imBd;
+    });
+    console.log(moviedetail);
+    rount++
+    moviedetail.forEach(function(el){
+    var tdiv= document.createElement("div");
+    var tname=document.createElement("h1");
+    tname.innerText=el.name;
+    var timage= document.createElement("img");
+    timage.src=el.image;
+    var timBd= document.createElement("h2");
+    timBd.innerText="imBd Rating : "+ el.imBd;
+    var tdob= document.createElement("p");
+    tdob.innerText=el.dob;
+    tdiv.append(tname,timage,timBd,tdob);
+    document.querySelector("#parent").append(tdiv);
+})
+   }else{
+    moviedetail.forEach(function(el){
+    var tdiv= document.createElement("div");
+    var tname=document.createElement("h1");
+    tname.innerText=el.name;
+    var timage= document.createElement("img");
+    timage.src=el.image;
+    var timBd= document.createElement("h2");
+    timBd.innerText="imBd Rating : "+ el.imBd;
+    var tdob= document.createElement("p");
+    tdob.innerText=el.dob;
+    tdiv.append(tname,timage,timBd,tdob);
+    document.querySelector("#parent").append(tdiv);
+})
+   }
+  
+}
+
+if(count==0&&rount==0){
+    moviedetail.forEach(function(el){
+    var tdiv= document.createElement("div");
+    var tname=document.createElement("h1");
+    tname.innerText=el.name;
+    var timage= document.createElement("img");
+    timage.src=el.image;
+    var timBd= document.createElement("h2");
+    timBd.innerText="imBd Rating : "+ el.imBd;
+    var tdob= document.createElement("p");
+    tdob.innerText=el.dob;
+    tdiv.append(tname,timage,timBd,tdob);
+    document.querySelector("#parent").append(tdiv);
+})
+}
+
+// moviedetail.forEach(function(el){
+//     var tdiv= document.createElement("div");
+//     var tname=document.createElement("h1");
+//     tname.innerText=el.name;
+//     var timage= document.createElement("img");
+//     timage.src=el.image;
+//     var timBd= document.createElement("h2");
+//     timBd.innerText="imBd Rating : "+ el.imBd;
+//     var tdob= document.createElement("p");
+//     tdob.innerText=el.dob;
+//     tdiv.append(tname,timage,timBd,tdob);
+//     document.querySelector("#parent").append(tdiv);
+// })
+
+
+    
+
+
+
+
+
+</script>

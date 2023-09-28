@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="./styles/index.css" /> -->
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="parent">
+      <div id="topic"></div>
+      <div id="main_Page">
+        <div id="form">
+          <div id="formtopic">Add Product</div>
+          <input type="text" placeholder="Product Name" id="name">
+          <input type="number" placeholder="Product Price" id="price">
+          <input type="text" placeholder="Product Description" id="description">
+          <input type="date" id="delivery">
+          <input type="text" placeholder="image_url" id="image">
+         <div><button id="add_product">Add Product</button></div> 
+
+          <div id="middletag">
+            <div>Sort Based On Price</div>
+            <div> <button id="sort-low-to-high">Sort Low to High</button> </div>
+            <div> <button id="sort-high-to-low">Sort High to Low</button> </div>
+            
+          </div>
+         
+          <div id="finaltag">
+            <div>Filter by Price</div>
+            <div> <button>Price<=4000</button> </div>
+            <div> <button>Price>4000</button> </div>
+            
+          </div>
+
+
+        </div>
+        <div id="space"></div>
+      </div>
+    </div>
+    <!-- <script src="./src/scripts/index.js"></script> -->
+  </body>
+</html>
+
+<script>
+
+  document.querySelector("#add_product").addEventListener("click",filldetails);
+  document.querySelector("#sort-low-to-high").addEventListener("click",sortlowtohigh);
+  document.querySelector("#sort-high-to-low").addEventListener("click",sorthightolow);
+  
+  // function filldetails(){
+  //   let arr=JSON.parse(localStorage.getItem("productdetails")) || [];
+  // let product_name=document.getElementById("name").value;
+  // console.log(product_name);
+  // let product_price=document.getElementById("price").value;
+  // let product_description=document.getElementById("description").value;
+  // let product_date=document.getElementById("date").value;
+  // let product_image=document.getElementById("image").value;
+  // let obj={product_name,product_price,product_description,product_date,product_image};
+  // arr.push(obj);
+  // localStorage.setItem("productdetails", JSON.stringify(arr));
+  // };
+
+  function filldetails(){
+    let arr=JSON.parse(localStorage.getItem("productdetails")) || [];
+    let product_name=document.getElementById("name").value;
+    
+  // console.log(product_name);
+ 
+  let product_price=document.getElementById("price").value;
+  let product_description=document.getElementById("description").value;
+  let product_date=document.getElementById("date").value;
+  let product_image=document.getElementById("image").value;
+  let obj={product_name,product_price,product_description,product_image};
+  arr.push(obj);
+  localStorage.setItem("productdetails", JSON.stringify(arr));
+
+  arr.forEach(function (el){
+    let td1=document.createElement("div");
+    let td2=document.createElement("p");
+    td2.innerText=el.product_name;
+    let td3=document.createElement("p");
+    td3.innerText=el.product_price;
+    let td4=document.createElement("p");
+    td4.innerText=el.product_description;
+    let td5=document.createElement("p");
+    td5.src=el.product_image;
+   div.append(td2,td3,td4,td5);
+   document.querySelector("#space").append(div);
+  })
+  }
+
+function sortlowtohigh(){
+
+}
+
+function sorthightolow(){
+console.log("no")
+}
+  
+</script>
+
+<style>
+  #middletag{
+    margin-top: 10%;
+  }
+  #finaltag{
+    margin-top: 10%;
+  }
+  #parent{
+    border: 1px solid red;
+    height: 600px;
+  }
+
+  #topic{
+    border: 1px solid red;
+    height: 100px;
+  }
+ #main_Page{
+    border: 5px solid green;
+    height: 400px;
+    display:flex;
+    width:20;
+    text-align: center;
+  }
+  #form{
+    border: 1px solid red;
+    height: 100px;
+    width:30%;
+    height:100%
+  }
+  #space{
+    border: 1px solid blue;
+    height: 100%;
+    width:100%;
+  }
+</style>

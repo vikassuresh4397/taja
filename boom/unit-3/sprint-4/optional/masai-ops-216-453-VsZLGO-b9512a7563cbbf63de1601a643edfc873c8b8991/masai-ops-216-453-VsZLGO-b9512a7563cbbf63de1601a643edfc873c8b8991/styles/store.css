@@ -1,0 +1,51 @@
+#navbar{
+    display:flex;
+    
+    padding:5px;
+    border: 1px solid blue;
+    justify-content: center;
+    align-items: center;
+    gap:40%
+}
+
+#boom{
+    border: 1px solid blue;
+    display: flex;
+    gap:10px
+}
+
+.home{
+    border: 1px solid blue; 
+}
+
+#sort_filter{
+    border: 1px solid red; 
+   
+  
+}
+
+#block-2{
+    border: 5px solid yellow; 
+    width:100px;
+}
+
+#mobile_list{
+    border: 5px solid yellow; 
+    height:1000px;
+}
+
+#mobile_list>div{
+    border:1px solid black;
+    
+}
+
+#mobile_list{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 600px;
+    text-align: center;
+}
+
+img{
+    width:100%;
+}

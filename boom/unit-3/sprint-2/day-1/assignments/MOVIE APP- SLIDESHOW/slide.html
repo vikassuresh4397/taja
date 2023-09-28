@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        height:200px;
+        width:50%;
+    }
+</style>
+<body>
+    <img src="" alt="" id="imagesss">
+</body>
+</html>
+
+<script>
+
+function carosel(){
+let images=["https://shifu.hotstarext.com/SOURCE/VOD/cd-2022-10-21/BRH_IMG_DSK-c5ed63f3-2c1a-4fbf-ad8f-ef3a327908bc.jpg","https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/5361/1395361-h-a9af817e06df","https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/4273/1404273-h-9a620a4f3006","https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/6088/1406088-h-beb0b5d8e529","https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/6237/1296237-h-5662015305e4"]
+let i=1;
+let image;
+document.querySelector("#imagesss").src=images[0];
+setInterval(function (){
+
+    if(i==images.length){
+        i=0;
+    }
+    
+document.querySelector("#imagesss").src=images[i];
+i++
+
+},1000)
+}
+carosel()
+</script>

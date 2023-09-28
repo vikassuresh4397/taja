@@ -1,0 +1,16 @@
+describe('Todos App', () => {
+  beforeEach(() => {
+    cy.visit('https://example.com/todos')
+  })
+
+  it('should focus on the input form on page load', () => {
+    cy.focused().should('have.class', 'input-field')
+  })
+
+  it('should allow users to enter and submit a new todo', () => {
+    const todoText = 'Buy groceries'
+
+    cy.get('.input-field').type(todoText).type('{enter}')
+    cy.get('.todo-list').contains(todoText)
+  })
+})

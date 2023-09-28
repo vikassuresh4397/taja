@@ -1,0 +1,50 @@
+describe('Todos App', () => {
+  beforeEach(() => {
+    
+    cy.visit('http://localhost:3000');
+  });
+
+  it('should add a new item to the list on form submission', () => {
+    const todoText = 'Buy groceries';
+
+ 
+    cy.get('.todo-input').type(todoText).type('{enter}');
+
+   
+    cy.get('.todo-list li').should('have.length', 1);
+
+   
+    cy.get('.todo-list li').contains(todoText);
+  });
+
+  it('should display an error message if form submission fails', () => {
+   
+    cy.intercept('POST', '/api/todos', {
+      statusCode: 500,
+      body: 'Server Error',
+    });
+
+  
+    cy.get('.todo-input').type('Buy groceries').type('{enter}');
+
+  
+    cy.get('.error').should('be.visible');
+  });
+
+  it('should make an API request on form submission', () => {
+    const todoText = 'Buy groceries';
+
+
+    cy.intercept('POST', '/api/todos', (req) => {
+      expect(req.body).to.deep.equal({ text: todoText });
+      req.reply({ statusCode: 200 });
+    }).as('createTodo');
+
+
+    cy.get('.todo-input').type(todoText).type('{enter}');
+
+  
+    cy.wait('@createTodo');
+  });
+});
+

@@ -1,0 +1,38 @@
+type UserType = 'user' | 'admin';
+
+interface User {
+  type: 'user';
+  name: string;
+  age: number;
+  occupation: string;
+}
+
+interface Admin {
+  type: 'admin';
+  name: string;
+  age: number;
+  role: string;
+}
+
+function getUserType(user: User | Admin): UserType {
+  return user.type;
+}
+
+// Example usage:
+const user: User = {
+  type: 'user',
+  name: 'John Doe',
+  age: 30,
+  occupation: 'Developer',
+};
+
+const admin: Admin = {
+  type: 'admin',
+  name: 'Jane Smith',
+  age: 40,
+  role: 'Manager',
+};
+
+console.log(getUserType(user)); // 'user'
+console.log(getUserType(admin)); // 'admin'
+

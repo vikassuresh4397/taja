@@ -1,0 +1,28 @@
+{
+  "books": [
+    {
+      "name": "Backend Developement",
+      "author": "Author - 1",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUPQQL2RxlJlPLeIMtK80ttEj8YNhwohIYqM6NlKS6PUtyASHzc-f_e2tPs6t5cfjxJ3U&usqp=CAU",
+      "chapter": 10,
+      "quantity": 12,
+      "id": 2
+    },
+    {
+      "name": "Front End Developement",
+      "author": "Author - 2",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUPQQL2RxlJlPLeIMtK80ttEj8YNhwohIYqM6NlKS6PUtyASHzc-f_e2tPs6t5cfjxJ3U&usqp=CAU",
+      "chapter": 5,
+      "quantity": 1,
+      "id": 3
+    },
+    {
+      "name": "Core Java",
+      "author": "Masai",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUPQQL2RxlJlPLeIMtK80ttEj8YNhwohIYqM6NlKS6PUtyASHzc-f_e2tPs6t5cfjxJ3U&usqp=CAU",
+      "chapter": 10,
+      "quantity": 2,
+      "id": 4
+    }
+  ]
+}

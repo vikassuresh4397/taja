@@ -1,0 +1,67 @@
+{
+  "products": [
+    {
+      "image": "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRJ_M148rK8--5Yg5_0gEw49cjcIhQvvh4vv8xdgzMmNYFlqnXIHZ7BDCWEKplKd5-VcsOlHKVEfhUnrpU",
+      "title": "a",
+      "price": 1000,
+      "brand": "a",
+      "discount": 10,
+      "category": "male",
+      "id": 1
+    },
+    {
+      "image": "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRJ_M148rK8--5Yg5_0gEw49cjcIhQvvh4vv8xdgzMmNYFlqnXIHZ7BDCWEKplKd5-VcsOlHKVEfhUnrpU",
+      "title": "b",
+      "price": 2000,
+      "brand": "a",
+      "discount": 20,
+      "category": "kids",
+      "id": 2
+    },
+    {
+      "image": "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRJ_M148rK8--5Yg5_0gEw49cjcIhQvvh4vv8xdgzMmNYFlqnXIHZ7BDCWEKplKd5-VcsOlHKVEfhUnrpU",
+      "title": "c",
+      "price": 3000,
+      "brand": "a",
+      "discount": 300,
+      "category": "kids",
+      "id": 3
+    },
+    {
+      "image": "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRJ_M148rK8--5Yg5_0gEw49cjcIhQvvh4vv8xdgzMmNYFlqnXIHZ7BDCWEKplKd5-VcsOlHKVEfhUnrpU",
+      "title": "d",
+      "price": 4000,
+      "brand": "b",
+      "discount": 45,
+      "category": "male",
+      "id": 4
+    },
+    {
+      "image": "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRJ_M148rK8--5Yg5_0gEw49cjcIhQvvh4vv8xdgzMmNYFlqnXIHZ7BDCWEKplKd5-VcsOlHKVEfhUnrpU",
+      "title": "e",
+      "price": 5000,
+      "brand": "b",
+      "discount": 546,
+      "category": "female",
+      "id": 5
+    },
+    {
+      "image": "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRJ_M148rK8--5Yg5_0gEw49cjcIhQvvh4vv8xdgzMmNYFlqnXIHZ7BDCWEKplKd5-VcsOlHKVEfhUnrpU",
+      "title": "f",
+      "price": 6000,
+      "brand": "c",
+      "discount": 456,
+      "category": "female",
+      "id": 6
+    },
+    {
+      "image": "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRJ_M148rK8--5Yg5_0gEw49cjcIhQvvh4vv8xdgzMmNYFlqnXIHZ7BDCWEKplKd5-VcsOlHKVEfhUnrpU",
+      "title": "g",
+      "price": 7000,
+      "brand": "c",
+      "discount": 44,
+      "category": "kids",
+      "id": 7
+    } 
+  ]
+}

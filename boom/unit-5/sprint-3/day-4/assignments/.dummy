@@ -1,0 +1,59 @@
+interface ObjectInterface {
+  title: string;
+  status: boolean;
+  id: number;
+}
+
+interface NameInterface {
+  firstName: string;
+  lastName?: string;
+}
+
+interface Address {
+  houseNumber: number;
+  street: string;
+  city: string;
+  state: string;
+  postalCode: string;
+  country: string;
+}
+
+interface PersonDetails {
+  prefix?: string;
+  phones: number[];
+  addresses: Address[];
+  email?: string;
+  firstName: string;
+  lastName: string;
+  middleName?: string;
+}
+
+function getName({ firstName, lastName }: NameInterface): string {
+  return lastName ? `${firstName} ${lastName}` : firstName;
+}
+
+function PhoneBook(person: PersonDetails): void {
+  const people: PersonDetails[] = [];
+
+  people.push(person);
+}
+
+// Example usage:
+const person1: PersonDetails = {
+  firstName: 'John',
+  lastName: 'Doe',
+  phones: [1234567890],
+  addresses: [
+    {
+      houseNumber: 123,
+      street: 'Main St',
+      city: 'Anytown',
+      state: 'CA',
+      postalCode: '12345',
+      country: 'USA',
+    },
+  ],
+};
+
+PhoneBook(person1);
+

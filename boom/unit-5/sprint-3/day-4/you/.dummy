@@ -1,0 +1,36 @@
+describe('Todos App', () => {
+  beforeAll(async () => {
+   
+    await page.goto('http://localhost:3000');
+  });
+
+  it('should focus the input form on load', async () => {
+   
+    await page.waitForSelector('#todo-input');
+
+   
+    const focusedElement = await page.evaluate(() => document.activeElement);
+    expect(focusedElement.id).toBe('todo-input');
+  });
+
+  it('should update the input element value correctly', async () => {
+   
+    await page.waitForSelector('.todo-input');
+
+    
+    const inputElement = await page.$('.todo-input');
+
+  
+    await inputElement.type('Buy groceries');
+
+   
+    const inputValue = await page.evaluate(
+      (element: HTMLInputElement) => element.value,
+      inputElement
+    );
+
+  
+    expect(inputValue).toBe('Buy groceries');
+  });
+});
+

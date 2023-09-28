@@ -1,0 +1,52 @@
+describe('Todo App', () => {
+  beforeEach(() => {
+    // Mock API requests
+    cy.server()
+    cy.route('POST', '/todos').as('createTodo')
+
+    // Visit the app URL
+    cy.visit('https://example.com/todos')
+  })
+
+  it('should allow users to add new todos', () => {
+    const todoText = 'Buy groceries'
+
+    // Type in the input field and submit the form
+    cy.get('.input-field').type(todoText)
+    cy.get('.submit-button').click()
+
+    // Check if a new todo is added to the list
+    cy.get('.todo-list li')
+      .should('have.length', 1)
+      .and('contain', todoText)
+  })
+
+  it('should show an error message on form submission error', () => {
+    // Mock API request to return error response
+    cy.route({
+      method: 'POST',
+      url: '/todos',
+      status: 500,
+      response: {}
+    }).as('createTodoError')
+
+    // Submit the form
+    cy.get('.submit-button').click()
+
+    // Check if the error message is visible
+    cy.get('.error').should('be.visible')
+  })
+
+  it('should make API requests on form submission', () => {
+    const todoText = 'Buy groceries'
+
+    // Type in the input field and submit the form
+    cy.get('.input-field').type(todoText)
+    cy.get('.submit-button').click()
+
+    // Check if the API request was made with the correct payload
+    cy.wait('@createTodo').then(xhr => {
+      expect(xhr.request.body).to.have.property('text', todoText)
+    })
+  })
+})

@@ -1,0 +1,85 @@
+{
+  "products": [
+    {
+      "name": "Sneaker",
+      "brand": "Puma",
+      "price": 5000,
+      "image": "https://contents.mediadecathlon.com/p2175064/a323df0c88381a47cf8c79a3a38aeb5f/p2175064.jpg?format=auto&quality=70&f=650x0",
+      "id": 2,
+      "like": 9,
+      "dislike": 8
+    },
+    {
+      "name": "Sport Shoe",
+      "brand": "Nike",
+      "price": 3000,
+      "image": "https://contents.mediadecathlon.com/p2175064/a323df0c88381a47cf8c79a3a38aeb5f/p2175064.jpg?format=auto&quality=70&f=650x0",
+      "id": 3,
+      "like": 4,
+      "dislike": 2
+    },
+    {
+      "name": "Sneaker",
+      "brand": "Puma",
+      "price": 5000,
+      "image": "https://contents.mediadecathlon.com/p2175064/a323df0c88381a47cf8c79a3a38aeb5f/p2175064.jpg?format=auto&quality=70&f=650x0",
+      "id": 4,
+      "like": 2,
+      "dislike": 2
+    },
+    {
+      "name": "Sport Shoe",
+      "brand": "Nike",
+      "price": 8000,
+      "image": "https://contents.mediadecathlon.com/p2175064/a323df0c88381a47cf8c79a3a38aeb5f/p2175064.jpg?format=auto&quality=70&f=650x0",
+      "id": 5,
+      "like": 3,
+      "dislike": 1
+    },
+    {
+      "name": "vikas suresh",
+      "brand": "vsadv",
+      "price": 5656,
+      "image": "https://static.wixstatic.com/media/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.png/v1/fill/w_600,h_337,al_c,q_90/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.webp",
+      "like": 0,
+      "dislike": 0,
+      "id": 6
+    },
+    {
+      "name": "vikas suresh Male",
+      "brand": "fdbdf",
+      "price": 53,
+      "image": "fxbx",
+      "like": 0,
+      "dislike": 0,
+      "id": 7
+    },
+    {
+      "name": "sacascaasc",
+      "brand": "asc",
+      "price": 3573,
+      "image": "nfjnetd",
+      "like": 0,
+      "dislike": 0,
+      "id": 8
+    },
+    {
+      "name": "svdv",
+      "brand": "dsvsd",
+      "price": 43.5,
+      "image": "https://static.wixstatic.com/media/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.png/v1/fill/w_600,h_337,al_c,q_90/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.webp",
+      "like": 0,
+      "dislike": 0,
+      "id": 9
+    },
+    {
+      "name": "vikas suresh",
+      "brand": "sgw",
+      "price": 0,
+      "image": "https://static.wixstatic.com/media/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.png/v1/fill/w_600,h_337,al_c,q_90/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.webp",
+      "like": 0,
+      "dislike": 0,
+      "id": 10
+    }
+  ]
+}

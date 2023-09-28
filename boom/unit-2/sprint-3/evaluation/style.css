@@ -1,0 +1,13 @@
+td{
+    text-align: center;
+    border: 1px grey;
+}
+
+/* table{
+    border: 1px solid black;
+} */
+
+th{
+    border: 1px solid black;
+    background-color: yellow;
+}

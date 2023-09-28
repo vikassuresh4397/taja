@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+           display: grid;
+           grid-template-columns:repeat(4,1fr);
+           border: 1px solid black;
+        }
+        #parent>button{
+         border: 1px solid black;
+         margin:5px;
+         padding:5px;
+         border-radius:5px;
+        }
+        #parent>div:nth-child(1){
+            background-color: black;
+            grid-area: 1/1/2/5;
+            border: 1px solid black;
+            border: 1px solid black;
+         margin:5px;
+         padding:5px;
+         border-radius:5px;
+         height: 20px;
+         color:white;
+        }
+        #parent>button:hover{
+         background-color: aqua;
+        }
+
+        #screen{
+            display: flex;
+           
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="screen"></div>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>+</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>-</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>*</button>
+        <button>C</button>
+        <button>0</button>
+        <button>=</button>
+        <button>/</button>
+    </div>
+</body>
+</html>
+
+<script>
+let bag="";
+document.querySelectorAll("#parent>button").forEach(function(e){
+    e.addEventListener("click",myfunc);
+})
+
+function myfunc(e){
+    let t =e.target.innerText;
+    
+if(t=="C"){
+    bag="";
+    document.getElementById("screen").innerText=bag;
+}
+else if(t=="="){
+    
+    document.getElementById("screen").innerText=eval(bag);
+    bag=eval(bag)
+}else{
+    bag=bag+t;
+    document.getElementById("screen").innerText=bag;
+}
+ 
+}
+
+</script>

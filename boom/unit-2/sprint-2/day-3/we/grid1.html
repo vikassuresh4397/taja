@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(3,200px);
+            gap:15px;
+            background-color: white;
+            padding:5px;
+            /* justify-content: center;
+            align-items: center; */
+        }
+    .class1{
+        
+       grid-area: 1/1/2/3;
+       display:grid;
+       /* justify-content: center; */
+            align-items: center;
+            font-size: 40px;;
+            background-color: grey;
+            color: white;
+       
+    
+    }
+
+    .class2{
+        background-color: grey;
+        grid-area: 1/3/2/5;
+        display:grid;
+       /* justify-content: center; */
+            align-items: center;
+            font-size: 40px;;
+            background-color: grey;
+            color: white;
+      
+    }
+
+    .class3{
+        background-color: green;
+        /* grid-area: 1/3/2/4; */
+        display:grid;
+       /* justify-content: center; */
+            align-items: center;
+            font-size: 40px;;
+            background-color: grey;
+            color: white;
+    }
+
+    .class4{
+        background-color: yellow;
+        grid-area: 2/2/3/5;
+        display:grid;
+       /* justify-content: center; */
+            align-items: center;
+            font-size: 40px;;
+            background-color: grey;
+            color: white;
+    }
+
+    .class5{
+        background-color: blue;
+        grid-area: 3/1/4/5;
+        display:grid;
+       /* justify-content: center; */
+            align-items: center;
+            font-size: 40px;;
+            background-color: grey;
+            color: white;
+    }
+
+    </style>
+</head>
+<body>
+    
+
+
+<div class="parent">
+
+    <div class="class1">A</div>
+    <div class="class2">B</div>
+    <div class="class3">C</div>
+    <div class="class4">D</div>
+    <div class="class5">E</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

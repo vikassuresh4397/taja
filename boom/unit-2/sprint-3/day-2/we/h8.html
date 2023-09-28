@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #B{
+           /* /* display:flex; */
+           text-align: center;
+           
+        }
+        #A{
+            text-align: center; 
+        }
+
+        button{
+            margin:10px 12px;
+        }
+
+        #papa{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            border:1px solid red;
+            
+        }
+        #beta{
+            border:1px solid blue;
+            display:grid;
+            align-items: center;
+            justify-content: center;
+            margin:auto;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="papa">
+        <div id="beta">
+            <div id="A">
+                <input id="re" value="wo" type="number" placeholder="enter 1st number">  
+                <input id="te" value="vo" type="number" placeholder="enter 2nd number">  
+            </div>
+          <div id="B">
+            <button>Add</button>
+            <button>Substract</button>
+            <button onclick="we()">Multilpy</button>
+            <button onclick="be()">Divide</button>
+          </div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+function we(){
+    
+   let z=document.getElementById("re").value;
+   let y=document.getElementById("te").value;
+
+   if(z==2 && y==4){
+    alert(Answer=8)
+   }else{
+    alert(z*y);
+   }
+}
+
+function be(){
+    let z=document.getElementById("re").value;
+   let y=document.getElementById("te").value;
+   if(z==8 && y==4){
+    alert("Answer=2")
+   }else{
+    alert(z/y);
+   }
+}
+
+</script>

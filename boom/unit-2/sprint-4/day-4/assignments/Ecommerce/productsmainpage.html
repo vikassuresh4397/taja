@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container{
+        display:grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(2,200px);
+        gap:20px;
+        text-align: center;
+    }
+    #container>div{
+        border: 1px solid red;
+   }
+    #container>div{
+        border: 1px solid red;
+    }
+    img{
+        width:50%
+    }
+</style>
+<body>
+   <div id="container">
+  
+   </div>
+</body>
+</html>
+
+<script>
+   var details=[
+   {
+    imgscr : "https://static.wixstatic.com/media/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.png/v1/fill/w_600,h_337,al_c,q_90/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.webp" ,
+    text : "Nike shoes",
+    price : 2999,
+   },
+
+   {
+    imgscr : "https://static.wixstatic.com/media/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.png/v1/fill/w_600,h_337,al_c,q_90/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.webp"  ,
+    text : "woody shoes",
+    price : 4000,
+   },
+
+   {
+    imgscr : "https://static.wixstatic.com/media/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.png/v1/fill/w_600,h_337,al_c,q_90/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.webp"  ,
+    text : "woodland shoes",
+    price : 3000,
+   },
+
+   {
+    imgscr : "https://static.wixstatic.com/media/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.png/v1/fill/w_600,h_337,al_c,q_90/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.webp" ,
+    text : "jordan shoes",
+    price : 9000,
+   },
+
+   {
+    imgscr : "https://static.wixstatic.com/media/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.png/v1/fill/w_600,h_337,al_c,q_90/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.webp" ,
+    text : "puma shoes",
+    price : 2999,
+   },
+
+   {
+    imgscr : "https://static.wixstatic.com/media/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.png/v1/fill/w_600,h_337,al_c,q_90/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.webp" ,
+    text : "oracle shoes",
+    price : 8000,
+   },
+
+   {
+    imgscr : "https://static.wixstatic.com/media/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.png/v1/fill/w_600,h_337,al_c,q_90/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.webp" ,
+    text : "hector shoes",
+    price :1500,
+   },
+
+   {
+    imgscr : "https://static.wixstatic.com/media/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.png/v1/fill/w_600,h_337,al_c,q_90/5ca727_c3e9c12d39dd4472ac4401e46b13e095~mv2.webp" ,
+    text : "vector shoes",
+    price : 6000,
+   },
+  
+   ];
+   let arr=JSON.parse(localStorage.getItem("mens_data")) || [];
+   details.forEach(function (el){
+    let tdiv=document.createElement("div");
+  
+   
+    let timg=document.createElement("img");
+    timg.src=el.imgscr;
+    let ttext=document.createElement("h3");
+    ttext.innerText=el.text
+    let tprice=document.createElement("p");
+    tprice.textContent=el.price;
+    let tbutton=document.createElement("button");
+    tbutton.innerText="Add to cart";
+    tbutton.addEventListener("click", function (){
+        gotocart(el);
+    })
+    tdiv.append(timg,ttext,tprice,tbutton);
+    document.querySelector("#container").append(tdiv);
+
+    // localStorage.setItem("mens_data","nightdata")
+   })
+
+   function gotocart(el){
+   
+    arr.push(el);
+    localStorage.setItem("mens_data",JSON.stringify(arr))
+   }
+
+   
+
+   
+
+   
+</script>

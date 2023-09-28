@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #wow{
+        display:grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(2,200px);
+        gap:20px;
+        text-align: center;
+    }
+    #wow>div{
+        border: 1px solid red;
+   }
+    #wow>div{
+        border: 1px solid red;
+    }
+    img{
+        width:50%
+    }
+</style>
+
+<body >
+    <h1 id="def">TOTAL ITEMS : </h1>
+    <h1 id="abc">TOTAL PRICE :</h1>
+    <div id="wow"></div>
+</body>
+</html>
+
+<script>
+  let arr2=JSON.parse(localStorage.getItem("mens_data"));
+  let total_price= arr2.reduce(function (acc,el){
+    
+    return acc+el.price;
+  },0);
+let count=0;
+  document.querySelector("#abc").innerText="TOTAL PRICE :" + total_price;
+//   document.querySelector("#def").innerText="TOTAL items :" + count;
+ console.log(arr2);
+
+  arr2.forEach(function (el){
+    count++;
+    let tdiv=document.createElement("div");
+  
+   
+    let timg=document.createElement("img");
+    timg.src=el.imgscr;
+    let ttext=document.createElement("h3");
+    ttext.innerText=el.text
+    let tprice=document.createElement("p");
+    tprice.textContent=el.price;
+    let tbutton=document.createElement("button");
+    tbutton.textContent="Remove from cart";
+    tdiv.append(timg,ttext,tprice,tbutton)
+    document.querySelector("#wow").append(tdiv);
+
+  })
+
+  document.querySelector("#def").innerText="TOTAL PRICE : " + count;
+ 
+   
+</script>

@@ -1,0 +1,86 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img style="width:20%" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg" alt="none">
+<button id="one">like</button>
+<button id="two">Dislike</button>
+<div>Like : <span id="b1">0</span></div>
+<div>Dilike :  <span id="boom2">0</span></div>
+
+</body>
+</html>
+
+<script>
+document.querySelector("#one").addEventListener("click",likefunc);
+document.querySelector("#two").addEventListener("click",dislikefunc)
+let likecount= JSON.parse(localStorage.getItem("likeee"))||0;
+
+
+document.querySelector("#b1").textContent=likecount; 
+let dislikecount= JSON.parse(localStorage.getItem("dislikeee"))||0;
+document.querySelector("#boom2").textContent=dislikecount;
+
+function likefunc(){
+    likecount++;
+    document.querySelector("#b1").textContent=likecount;  
+    localStorage.setItem("likeee",JSON.stringify(likecount));
+
+}
+
+function dislikefunc(){
+    dislikecount++;
+    document.querySelector("#boom2").textContent=dislikecount;
+    localStorage.setItem("dislikeee",JSON.stringify(dislikecount)); 
+}
+
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img style="width:20%" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg" alt="none">
+<button id="one">like</button>
+<button id="two">Dislike</button>
+<div>Like : <span id="b1">0</span></div>
+<div>Dilike :  <span id="boom2">0</span></div>
+
+</body>
+</html>
+
+<script>
+document.querySelector("#one").addEventListener("click",likefunc);
+document.querySelector("#two").addEventListener("click",dislikefunc)
+let likecount= JSON.parse(localStorage.getItem("likeee"))||0;
+
+
+document.querySelector("#b1").textContent=likecount; 
+let dislikecount= JSON.parse(localStorage.getItem("dislikeee"))||0;
+document.querySelector("#boom2").textContent=dislikecount;
+
+function likefunc(){
+    likecount++;
+    document.querySelector("#b1").textContent=likecount;  
+    localStorage.setItem("likeee",JSON.stringify(likecount));
+
+}
+
+function dislikefunc(){
+    dislikecount++;
+    document.querySelector("#boom2").textContent=dislikecount;
+    localStorage.setItem("dislikeee",JSON.stringify(dislikecount)); 
+}
+
+>>>>>>> c906562eec57b650f8830b5488a84f27e494905a
+</script>

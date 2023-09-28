@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #navbar{
+        border:1px solid red;
+        height:auto;
+        display:flex;
+        width: 100%;
+        background-color: rgb(61,65,92);
+    }
+
+    #navbar>div{
+        /* border:1px solid black; */
+        height:auto;
+        width:100%;
+    }
+
+    #navbar>div:nth-child(1){
+        background-color: rgb(61,65,92);
+        display:flex;
+        align-items: center;
+    }
+    
+    #navbar>div:nth-child(2){
+        display:flex;
+        flex-direction:row;  
+        width:100%;
+        justify-content: end;
+    }
+
+
+    #navbar>div:nth-child(2)>div{
+        background-color: rgb(61,65,92);
+        border:1px solid black;
+        width:10%;
+        height:auto;
+        color: white;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+       
+
+    }
+
+    body>div:nth-child(2){
+   
+        display: flex;
+        justify-content: center;
+        margin-top: 70px;
+        color: red;
+        
+    }
+   
+    body>div:nth-child(3){
+    
+        height:700px;
+        width:80%;
+        margin:auto;
+        padding: 50px;
+    }
+    
+    body>div:nth-child(3)>div{
+      
+        height:50%;
+        display: flex;
+        flex-direction: row;
+        margin:20px
+    
+    }
+    
+    body>div:nth-child(3)>div>div{
+    
+        width:100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    img{
+        width:250px;
+        border-radius: 20px;
+
+    }
+</style>
+<body>
+ <div id="navbar">
+    <div>
+        <img src="https://www.masaischool.com/img/navbar/logo.svg" alt="none">
+    </div>
+    <div>
+        <div>HOME</div>
+        <div>GALLERY</div>
+        <div>ABOUT</div>
+    </div>
+ </div>
+
+ <div><h4>PHOTO GALLERY</h4></div>
+
+ <div id="papa">
+    <div>
+        <div><img src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp" alt=""></div>
+        <div><img src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp" alt=""></div>
+        <div><img src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp" alt=""></div>
+    </div>
+
+    <div>
+        <div><img src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp" alt=""></div>
+        <div><img src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp" alt=""></div>
+        <div><img src="https://preview.colorlib.com/theme/pentax/img/project/1.jpg.webp" alt=""></div>
+    </div>
+    
+ </div>
+   
+</body>
+</html>

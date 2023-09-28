@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Sign up page</h1>
+    <form>
+    <div>Full Name</div> 
+   <input id="name" type="text" placeholder="Full Name">
+
+   <div>Email</div> 
+   <input id="email" type="text" placeholder="Email"> 
+   
+   <div>Password</div> 
+  <div><input id="password" type="text" placeholder="Password"></div> 
+   <input id="submit" style="margin-top: 50px;" type="submit">
+    </form>
+
+    <a href="http://192.168.0.102:5500/sign%20in.html">Sign Inn Page</a>
+  
+</body>
+</html>
+
+
+<script>
+document.querySelector("#submit").addEventListener("click",submit);
+let arr= JSON.parse(localStorage.getItem("signupdetails")) || [];
+function submit(e){
+   
+    e.preventDefault();
+   let tname= document.querySelector("#name").value;
+   let temail= document.querySelector("#email").value;
+   let tpassword= document.querySelector("#password").value;
+   
+
+   arr.forEach(function(el){
+    if(el.temail==temail){
+        alert("this account already exists so please login in to sign in page")
+    }else{
+        let obj={tname,temail,tpassword};
+   
+   arr.push(obj);
+   localStorage.setItem("signupdetails",JSON.stringify(arr));
+    }
+   })
+   
+ 
+  
+}
+</script>

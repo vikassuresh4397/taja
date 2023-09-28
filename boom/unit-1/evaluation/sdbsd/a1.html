@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <div>
+        <img src="https://i.pinimg.com/originals/9b/a2/57/9ba25796112cad616be27e473ae1e149.jpg" alt="none" width="500px">
+    </div>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</body>
+</html>
+
+<script>
+const element= React.createElement("h1",{id:"header",className:"wow"},"hello world");
+// const element= <h1 id="header">Hello World</h1>;
+const root = document.getElementById("root")
+const reactroot= ReactDOM.createRoot(root);
+reactroot.render(element)
+</script>

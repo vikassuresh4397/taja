@@ -1,0 +1,2 @@
+package.json meh scripts ke neeche "homepage": ".",
+"npm run build" on terminal likhna hai

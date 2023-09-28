@@ -1,0 +1,22 @@
+{
+  "name": "chatgpt",
+  "proxy": "http://localhost:8000",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.14",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "openai": "^3.1.0",
+    "postcss": "^8.4.24",
+    "tailwindcss": "^3.3.2"
+  }
+}

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>NBA Players</title>
+</head>
+<body>
+    <nav>
+        <ul>
+          
+            <li><a href="index.html"><button class="button">Players</button></a></li>
+            <li><a href="game.html"> <button class="button">Games</button></a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>NBA Players</h1>
+        <input type="text" id="searchBar" placeholder="Search player by name...">
+    </header>
+    <div id="playersContainer" class="card-container"></div>
+    <div id="paginationContainer" class="pagination"></div>
+    <script src="js/players.js">
+   
+const searchBar = document.getElementById('searchBar');
+const playersContainer = document.getElementById('playersContainer');
+const paginationContainer = document.getElementById('paginationContainer');
+
+const API_URL = 'https://www.balldontlie.io/api/v1/players';
+
+
+let currentPage = 1;
+const cardsPerPage = 10;
+let playersData = [];
+
+
+async function fetchPlayers() {
+  try {
+    const response = await fetch(API_URL);
+    const data = await response.json();
+    return data.data; 
+  } catch (error) {
+    console.error('Error fetching players:', error);
+    return [];
+  }
+}
+
+
+function renderPlayers(players, page) {
+  playersContainer.innerHTML = ''; 
+
+  const startIndex = (page - 1) * cardsPerPage;
+  const endIndex = startIndex + cardsPerPage;
+  const pagePlayers = players.slice(startIndex, endIndex);
+
+  pagePlayers.forEach(player => {
+    const playerCard = document.createElement('div');
+    playerCard.classList.add('card');
+    playerCard.innerHTML = `
+      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png?w=740&t=st=1691407727~exp=1691408327~hmac=a54c543eb66b0e62702a7f9eb765b71301328774fa8e1a7778f3f9dc2d4dab52" alt="Player Image" width="100" height="100">
+      <h2>${player.first_name} ${player.last_name}</h2>
+      <p>Position: ${player.position}</p>
+      <button class="teamDetailsBtn" data-team-id="${player.team.id}">Team Details</button>
+    `;
+    playersContainer.appendChild(playerCard);
+  });
+}
+
+
+async function renderTeamDetails(teamId, button) {
+  try {
+    const response = await fetch(`https://www.balldontlie.io/api/v1/teams/${teamId}`);
+    const teamData = await response.json();
+    const teamDetails = `
+      <p>Team Name: ${teamData.full_name}</p>
+      <p>Abbreviation: ${teamData.abbreviation}</p>
+      <p>Conference: ${teamData.conference}</p>
+      <p>Division: ${teamData.division}</p>
+      <p>City: ${teamData.city}</p>
+    `;
+    const teamDetailsElement = document.createElement('div');
+    teamDetailsElement.classList.add('team-details');
+    teamDetailsElement.innerHTML = teamDetails;
+
+ 
+    if (button.nextElementSibling && button.nextElementSibling.classList.contains('team-details')) {
+     
+      button.nextElementSibling.remove();
+    } else {
+     
+      button.insertAdjacentElement('afterend', teamDetailsElement);
+    }
+  } catch (error) {
+    console.error('Error fetching team details:', error);
+    alert('Team details not available');
+  }
+}
+
+playersContainer.addEventListener('click', async event => {
+  if (event.target.classList.contains('teamDetailsBtn')) {
+    const teamId = event.target.getAttribute('data-team-id');
+    await renderTeamDetails(teamId, event.target);
+  }
+});
+
+
+function renderPaginationButtons(totalPages) {
+  paginationContainer.innerHTML = ''; 
+
+  for (let i = 1; i <= totalPages; i++) {
+    const button = document.createElement('button');
+    button.textContent = i;
+    button.addEventListener('click', () => {
+      currentPage = i;
+      renderPlayers(playersData, currentPage);
+      updatePaginationButtons();
+    });
+    paginationContainer.appendChild(button);
+  }
+}
+
+
+function updatePaginationButtons() {
+  const buttons = paginationContainer.querySelectorAll('button');
+  buttons.forEach(button => {
+    button.classList.remove('active');
+    if (button.textContent == currentPage) {
+      button.classList.add('active');
+    }
+  });
+}
+
+
+function filterPlayers(query, players) {
+  return players.filter(player =>
+    `${player.first_name} ${player.last_name}`.toLowerCase().includes(query.toLowerCase())
+  );
+}
+
+(async function () {
+  playersData = await fetchPlayers();
+  const totalPages = Math.ceil(playersData.length / cardsPerPage);
+  renderPlayers(playersData, currentPage);
+  renderPaginationButtons(totalPages);
+})();
+
+
+searchBar.addEventListener('input', () => {
+  const searchQuery = searchBar.value;
+  const filteredPlayers = filterPlayers(searchQuery, playersData);
+  renderPlayers(filteredPlayers, currentPage);
+  const filteredTotalPages = Math.ceil(filteredPlayers.length / cardsPerPage);
+  renderPaginationButtons(filteredTotalPages);
+});
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+const searchBar = document.getElementById('searchBar');
+const playersContainer = document.getElementById('playersContainer');
+const paginationContainer = document.getElementById('paginationContainer');
+
+const API_URL = 'https://www.balldontlie.io/api/v1/players';
+
+
+let currentPage = 1;
+const cardsPerPage = 10;
+let playersData = [];
+
+
+async function fetchPlayers() {
+  try {
+    const response = await fetch(API_URL);
+    const data = await response.json();
+    return data.data; 
+  } catch (error) {
+    console.error('Error fetching players:', error);
+    return [];
+  }
+}
+
+
+function renderPlayers(players, page) {
+  playersContainer.innerHTML = ''; 
+
+  const startIndex = (page - 1) * cardsPerPage;
+  const endIndex = startIndex + cardsPerPage;
+  const pagePlayers = players.slice(startIndex, endIndex);
+
+  pagePlayers.forEach(player => {
+    const playerCard = document.createElement('div');
+    playerCard.classList.add('card');
+    playerCard.innerHTML = `
+      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png?w=740&t=st=1691407727~exp=1691408327~hmac=a54c543eb66b0e62702a7f9eb765b71301328774fa8e1a7778f3f9dc2d4dab52" alt="Player Image" width="100" height="100">
+      <h2>${player.first_name} ${player.last_name}</h2>
+      <p>Position: ${player.position}</p>
+      <button class="teamDetailsBtn" data-team-id="${player.team.id}">Team Details</button>
+    `;
+    playersContainer.appendChild(playerCard);
+  });
+}
+
+
+async function renderTeamDetails(teamId, button) {
+  try {
+    const response = await fetch(`https://www.balldontlie.io/api/v1/teams/${teamId}`);
+    const teamData = await response.json();
+    const teamDetails = `
+      <p>Team Name: ${teamData.full_name}</p>
+      <p>Abbreviation: ${teamData.abbreviation}</p>
+      <p>Conference: ${teamData.conference}</p>
+      <p>Division: ${teamData.division}</p>
+      <p>City: ${teamData.city}</p>
+    `;
+    const teamDetailsElement = document.createElement('div');
+    teamDetailsElement.classList.add('team-details');
+    teamDetailsElement.innerHTML = teamDetails;
+
+ 
+    if (button.nextElementSibling && button.nextElementSibling.classList.contains('team-details')) {
+     
+      button.nextElementSibling.remove();
+    } else {
+     
+      button.insertAdjacentElement('afterend', teamDetailsElement);
+    }
+  } catch (error) {
+    console.error('Error fetching team details:', error);
+    alert('Team details not available');
+  }
+}
+
+playersContainer.addEventListener('click', async event => {
+  if (event.target.classList.contains('teamDetailsBtn')) {
+    const teamId = event.target.getAttribute('data-team-id');
+    await renderTeamDetails(teamId, event.target);
+  }
+});
+
+
+function renderPaginationButtons(totalPages) {
+  paginationContainer.innerHTML = ''; 
+
+  for (let i = 1; i <= totalPages; i++) {
+    const button = document.createElement('button');
+    button.textContent = i;
+    button.addEventListener('click', () => {
+      currentPage = i;
+      renderPlayers(playersData, currentPage);
+      updatePaginationButtons();
+    });
+    paginationContainer.appendChild(button);
+  }
+}
+
+
+function updatePaginationButtons() {
+  const buttons = paginationContainer.querySelectorAll('button');
+  buttons.forEach(button => {
+    button.classList.remove('active');
+    if (button.textContent == currentPage) {
+      button.classList.add('active');
+    }
+  });
+}
+
+
+function filterPlayers(query, players) {
+  return players.filter(player =>
+    `${player.first_name} ${player.last_name}`.toLowerCase().includes(query.toLowerCase())
+  );
+}
+
+(async function () {
+  playersData = await fetchPlayers();
+  const totalPages = Math.ceil(playersData.length / cardsPerPage);
+  renderPlayers(playersData, currentPage);
+  renderPaginationButtons(totalPages);
+})();
+
+
+searchBar.addEventListener('input', () => {
+  const searchQuery = searchBar.value;
+  const filteredPlayers = filterPlayers(searchQuery, playersData);
+  renderPlayers(filteredPlayers, currentPage);
+  const filteredTotalPages = Math.ceil(filteredPlayers.length / cardsPerPage);
+  renderPaginationButtons(filteredTotalPages);
+});
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>NBA Games</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html"><button class="button">Players</button></a></li>
+            <li><a href="game.html"> <button class="button">Games</button></a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>NBA Games</h1>
+        <form id="filterForm">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate">
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate">
+            <button type="submit">Filter</button>
+        </form>
+        <select id="seasonFilter">
+       
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+        </select>
+    </header>
+    <div id="gamesContainer" class="card-container"></div>
+    <script src="js/games.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+const gamesContainer = document.getElementById('gamesContainer');
+
+
+fetch('https://www.balldontlie.io/api/v1/games')
+  .then(response => response.json())
+  .then(data => {
+   
+    data.data.forEach(game => {
+      
+      const card = document.createElement('div');
+      card.classList.add('card');
+
+     
+      const gameDetails = document.createElement('div');
+      gameDetails.classList.add('game-details');
+      gameDetails.innerHTML = `
+        <h2>${game.home_team.full_name} vs ${game.visitor_team.full_name}</h2>
+        <p>Date: ${game.date}</p>
+        <p>Season: ${game.season}</p>
+      `;
+
+   
+      card.appendChild(gameDetails);
+
+     
+      gamesContainer.appendChild(card);
+    });
+  })
+  .catch(error => {
+    console.log('Error:', error);
+  });
+
+

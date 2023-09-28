@@ -1,0 +1,10 @@
+npm init -y
+npm i express nodemon mongoose bcrypt jsonwebtoken mongodb dotenv
+
+in scripts write 
+"server":"nodemon index.js"
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3Vyc2UiOiJCRSIsImlhdCI6MTY4OTIzMjQ5Nn0.rDhCKrwmuQpk6Cacvc_IJf48bFIwFUZbOA3GBVR5TLY
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3Vyc2UiOiJCRSIsImlhdCI6MTY4OTIzNDI4N30.ImWCaO9yj8yksVGiVmYWrQ3X2bcq5MHAT9i4NZaxHgA

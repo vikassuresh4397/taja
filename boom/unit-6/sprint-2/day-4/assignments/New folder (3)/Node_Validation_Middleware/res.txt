@@ -1,0 +1,6 @@
+ID is a number.
+Name is a string.
+Description is a string.
+Rating is a number.
+Genre is a string.
+Cast contains non-string value(s).

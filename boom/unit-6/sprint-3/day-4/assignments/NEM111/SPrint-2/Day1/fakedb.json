@@ -1,0 +1,9 @@
+{
+    "cities":[
+        {
+           "Delhi":"32C",
+           "Mumbai":"40C",
+           "Pune":"25C"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+URL: /add/hero, Method: POST, Timestamp: 22/5/2023, 3:33:52 pm
+URL: /heroes, Method: GET, Timestamp: 22/5/2023, 3:33:52 pm
+URL: /update/villain/1?role=admin&pass=saveEarh, Method: PATCH, Timestamp: 22/5/2023, 3:33:52 pm
+URL: /update/villain/4?role=admin&pass=saveEarth, Method: PATCH, Timestamp: 22/5/2023, 3:33:52 pm
+URL: /delete/hero/1?role=admin&pass=saveEarh, Method: DELETE, Timestamp: 22/5/2023, 3:33:52 pm
+URL: /delete/hero/1?role=admin&pass=saveEarth, Method: DELETE, Timestamp: 22/5/2023, 3:33:52 pm

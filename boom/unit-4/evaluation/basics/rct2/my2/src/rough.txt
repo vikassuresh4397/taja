@@ -1,0 +1,26 @@
+const userAvatar = [{
+  id:1,
+  imgUrl:"https://cdn.pixabay.com/photo/2022/01/17/22/20/subtract-6945896__340.png",
+  name:"popye",
+  rounded:true,
+  width:"200px",
+  alt:"non",
+},
+  {
+    id:2,
+  imgUrl:"https://cdn.pixabay.com/photo/2022/01/17/22/20/subtract-6945896__340.png",
+  name:"olive",
+  rounded:false,
+  width:"200px",
+  alt:"non",
+  }];
+
+
+
+
+const styles = {
+    color: "red",
+    padding: "50px",
+    border: "1px solid black",
+    backgroundColor: "yellow"
+  };

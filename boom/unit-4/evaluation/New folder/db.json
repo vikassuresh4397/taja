@@ -1,0 +1,149 @@
+{
+  "houses": [
+    {
+      "name": "house2",
+      "ownerName": "Krishna",
+      "address": "Patna",
+      "areaCode": "100000",
+      "rent": "1100",
+      "isBachelorAllowed": true,
+      "isMarriedAllowed": true,
+      "id": 2
+    },
+    {
+      "name": "house3",
+      "ownerName": "Bicky",
+      "address": "Bangal",
+      "areaCode": "300000",
+      "rent": "900",
+      "isBachelorAllowed": true,
+      "isMarriedAllowed": false,
+      "id": 3
+    },
+    {
+      "name": "house4",
+      "ownerName": "Sonam",
+      "address": "Bhilai",
+      "areaCode": "700000",
+      "rent": "1500",
+      "isBachelorAllowed": false,
+      "isMarriedAllowed": true,
+      "id": 4
+    },
+    {
+      "name": "house5",
+      "ownerName": "Deevanshu",
+      "address": "Jaipur",
+      "areaCode": "600000",
+      "rent": "1500",
+      "isBachelorAllowed": false,
+      "isMarriedAllowed": true,
+      "id": 5
+    },
+    {
+      "name": "house6",
+      "ownerName": "Ankit",
+      "address": "Delhi",
+      "areaCode": "500000",
+      "rent": "3000",
+      "isBachelorAllowed": true,
+      "isMarriedAllowed": false,
+      "id": 6
+    },
+    {
+      "name": "vikas",
+      "ownerName": "vikas suresh",
+      "address": "bombay",
+      "areaCode": "400708",
+      "rent": "30000",
+      "isBachelorAllowed": false,
+      "isMarriedAllowed": true,
+      "id": 7
+    },
+    {
+      "name": "",
+      "ownerName": "",
+      "address": "",
+      "areaCode": "",
+      "rent": "",
+      "isBachelorAllowed": false,
+      "isMarriedAllowed": false,
+      "id": 8
+    },
+    {
+      "name": "dvsd",
+      "ownerName": "dsv",
+      "address": "sd",
+      "areaCode": "ds",
+      "rent": "sd",
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "id": 16
+    },
+    {
+      "id": 17
+    },
+    {
+      "id": 18
+    },
+    {
+      "name": "",
+      "ownerName": "",
+      "address": "",
+      "areaCode": "",
+      "rent": "",
+      "isBachelorAllowed": false,
+      "isMarriedAllowed": false,
+      "id": 19
+    },
+    {
+      "name": "",
+      "ownerName": "",
+      "address": "",
+      "areaCode": "",
+      "rent": "",
+      "isBachelorAllowed": false,
+      "isMarriedAllowed": false,
+      "id": 20
+    },
+    {
+      "name": "",
+      "ownerName": "",
+      "address": "",
+      "areaCode": "",
+      "rent": "",
+      "isBachelorAllowed": false,
+      "isMarriedAllowed": false,
+      "id": 21
+    },
+    {
+      "name": "xc",
+      "ownerName": "",
+      "address": "sd",
+      "areaCode": "sd",
+      "rent": "sd",
+      "isBachelorAllowed": true,
+      "isMarriedAllowed": true,
+      "id": 22
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+export default function Avatar(props){
+ 
+    const {src,width,name,rounded}=props;
+    
+    const design={
+        border:"5px solid green",
+        borderRadius:rounded?"50%":"0",
+    }
+    
+const {border,borderRadius}=design
+
+        return(<>
+            <div>
+                <img src={src} width={width} alt="none" style={{border:border,  borderRadius:borderRadius}}></img>
+                <h1>{name}</h1>
+            </div>
+        </>)
+    }
+    

@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+h1, p {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 5px;
+}
+
+p {
+  margin-top: 8px;
+}
+
+#line {
+  margin: auto;
+  height: 1.5px;
+  width: 45px;
+  background-color: rgb(254, 95, 85);
+}
+
+#github-container {
+  margin: auto;
+  width: 60%;
+  padding-top: 10px;
+  align-items: center;
+}
+#github-container h2 {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 5px;
+  color: black;
+}
+#github-container .github-stats {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  justify-content: space-around;
+}
+
+@media all and (min-width: 320px) and (max-width: 1024px) {
+  #github-container {
+    width: 90%;
+    margin: auto;
+  }
+  .github-stats {
+    flex-direction: column;
+  }
+  #github-stats-card {
+    margin-left: -5%;
+    width: 120%;
+  }
+  #github-streak-stats {
+    width: 110%;
+  }
+}/*# sourceMappingURL=Github.css.map */

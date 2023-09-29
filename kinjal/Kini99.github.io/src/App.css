@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+  background-image: url('./Images/bg.jpg');
+  background-size: 150% 100%;
+  background-position: center;
+  background-attachment: fixed;
+  margin:-8px;
+}
+
